@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(to right, #00b4db, #0083b0); */
+    text-align: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+
+  .animated-text {
+    font-size: 1.5rem;
+    color: #f9f5f5;
+    margin-bottom: 1rem;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-8px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.8; }
+  }
+
+  .calculator {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 320px;
+  }
+
+  .display {
+    background: #b89ee3;
+    padding: 1rem;
+    text-align: right;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    min-height: 60px;
+    border-radius: 8px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .buttons button {
+    padding: 1.2rem;
+    border: none;
+    font-size: 1.2rem;
+    background: #b0c4b1;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 8px;
+    box-shadow: 3px 4px #999;
+    aspect-ratio: auto;
+  }
+  
+  .buttons button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  
+
+  .buttons button:hover {
+    background: #a3b6a4;
+  }
+
+  .buttons .operator {
+    background: #00b4db;
+    color: #ffffff;
+  }
+
+  .buttons .operator:hover {
+    background: #009ec3;
+  }
+
+  .buttons .equal {
+    background: #ff5722;
+    color: #fff;
+    grid-column: span 2;
+    border-radius: 8px;
+  }
+
+  .buttons .equal:hover {
+    background: #e64a19;
+  }
+
+  @media (max-width: 400px) {
+    .calculator {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
